@@ -6,12 +6,14 @@ export class CoffesController {
   findAll() {
     return 'coffe controller list';
   }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return `Hello, my lovely ${id} coffe`;
   }
+
   @Post()
-  create(@Body() body) {
+  create(@Body('name') body) {
     return body;
   }  
 }
