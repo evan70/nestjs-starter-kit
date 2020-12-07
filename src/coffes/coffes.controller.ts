@@ -1,6 +1,6 @@
 import { Controller, Get, Param, Post, Body } from '@nestjs/common';
 
-@Controller("coffes")
+@Controller('coffes')
 export class CoffesController {
   @Get()
   findAll() {
