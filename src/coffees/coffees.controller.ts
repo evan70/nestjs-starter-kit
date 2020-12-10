@@ -1,30 +1,30 @@
-import {
-  Controller,
-  Get,
-  Param,
-  Post,
-  Body,
-  HttpCode,
-  HttpStatus,
-  Res
-} from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Patch, Delete } from '@nestjs/common';
 
 @Controller('coffees')
 export class CoffeesController {
   @Get()
-  findAll(@Res() response) {
-    response.status(200).send('coffee All controller list');
+  findAll() {
+    return 'This return all coffees controller list';
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return `Hello, my lovely ${id} coffee`;
+    return `This return ${id} coffee`;
   }
 
   @Post()
-  @HttpCode(HttpStatus.GONE)
-  create(@Body('name') body) {
+  create(@Body('brand') body) {
     return body;
+    //return 'This create brand coffee'
   }
 
+  @Patch(':id')
+  update(@Param('id') id: string, @Body() body) {
+    return `This update - patch ${id} coffee`;
+  }
+
+  @Delete(':id')
+  remove(@Param('id') id: string) {
+    return `This remove - delete ${id} coffee`;
+  }
 }
