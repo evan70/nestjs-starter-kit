@@ -16,7 +16,7 @@ describe('AppController', () => {
 
   describe('root', () => {
     it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World ! This message is injected from app.service.ts !');
+      expect(appController.getHello()).toBe('Hello World!');
     });
   });
 });
